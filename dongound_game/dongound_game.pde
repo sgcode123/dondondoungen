@@ -13,6 +13,7 @@ AnimatedGIF yourGIF;
 AnimatedGIF ourGIF;
 AnimatedGIF introGIF;
 
+PImage map;
 
 Button blueButton, greenButton, pinkButton, blackButton;
 color bkg;
@@ -42,7 +43,7 @@ void setup()  {
  bkg = white;
   mode = INTRO;
   imageMode(CENTER);
-
+map = loadImage("map.gif");
   myObject = new ArrayList<GameObject>();
 
  blueButton  = new Button("BLUE",  200, 200, 200, 150, blue,  pink);

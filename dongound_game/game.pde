@@ -1,30 +1,23 @@
-void game(){
+void game() {
   background(0);
   ourGIF.show();
-    drawRoom();
-     drawGameOdjects();
-   
-  
-
- 
-  
- 
-  
-  
+  drawRoom();
+  drawGameOdjects();
+  drawMiniMap();
 }
-void drawRoom(){
+void drawRoom() {
   stroke(black);
   strokeWeight(4);
-  line(0,0,width,height);
-  line(width,0,0,height);
-  
+  line(0, 0, width, height);
+  line(width, 0, 0, height);
+
   fill(brown);
   rectMode(CENTER);
-  rect(width/2,height/2,width*0.8,height*0.8);
+  rect(width/2, height/2, width*0.8, height*0.8);
 }
-void drawGameOdjects(){
-   int i = 0;
- while (i< myObject.size()) {
+void drawGameOdjects() {
+  int i = 0;
+  while (i< myObject.size()) {
     GameObject myObj = myObject.get(i);
     myObj.show();
     myObj.act();
@@ -34,8 +27,11 @@ void drawGameOdjects(){
     } else {
       i++;
     }
-
   }
+}
+void drawMiniMap(){
+  map.resize(100, 100);
+ image(map, 50,50);
 }
 
 
