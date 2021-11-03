@@ -14,9 +14,11 @@ AnimatedGIF ourGIF;
 AnimatedGIF introGIF;
 
 PImage map;
-
+color northRoom, eastRoom, southRoom, westRoom;
 Button blueButton, greenButton, pinkButton, blackButton;
 color bkg;
+
+
 
 boolean upkey,downkey,leftkey,rightkey,spacekey;
 boolean win, lose;
@@ -24,6 +26,7 @@ Hero myHero;
 
 
 ArrayList<GameObject> myObject;
+ArrayList<DarknessCell>darkness;
 
 boolean a,w,d,s;
 
@@ -44,8 +47,29 @@ void setup()  {
   mode = INTRO;
   imageMode(CENTER);
 map = loadImage("map.gif");
-  myObject = new ArrayList<GameObject>();
+/*
+darkness = new ArrayList<DarknessCell>(width/size)*(height/*size));
+float size =100;
+int x = 0 //<>//
+, y = 0;
+while(y<map.height){
+  darkness.add(new DarknessCell(x,y,size));
+  color c = map.get(x,y);
+  fill(c);
+  square(x,y,size);
+  x = x +1;
+   x += size;
+  if(x >=map.width){
+    x =0;
+    y = y +1;
+    y +=size;
+  }
+}
+*/
+//darkness.add(new DarknessCell(100,100,size));
 
+  myObject = new ArrayList<GameObject>();
+//ArrayList<DarknessCell>darkness;
  blueButton  = new Button("BLUE",  200, 200, 200, 150, blue,  pink);
   greenButton = new Button("GREEN", 200, 400, 200, 150, green, yellow);
   pinkButton  = new Button("PINK",  400, 650, 600, 200, pink,  blue);

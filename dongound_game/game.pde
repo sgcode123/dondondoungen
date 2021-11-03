@@ -14,6 +14,27 @@ void drawRoom() {
   fill(brown);
   rectMode(CENTER);
   rect(width/2, height/2, width*0.8, height*0.8);
+
+  //check details in room code make shure to print varibles 
+
+  northRoom = map.get(myHero.roomX, myHero.roomY-1);
+  eastRoom = map.get(myHero.roomX +1, myHero.roomY-1);
+  southRoom = map.get(myHero.roomX, myHero.roomY-1);
+  westRoom = map.get(myHero.roomX-1, myHero.roomY-1);
+   noStroke();
+   fill(black);
+  if(northRoom != #FFFFFF){
+     ellipse(width/2,height*0.1,100,100);
+  }
+   if(eastRoom != #FFFFFF){
+   ellipse(width*0.9,height/2,100,100);
+  }
+  if(southRoom != #FFFFFF){
+     ellipse(width/2,height*0.9,100,100);
+  }
+ if(westRoom != #FFFFFF){
+     ellipse(width*0.1,height/2,100,100);
+  }
 }
 void drawGameOdjects() {
   int i = 0;
@@ -29,9 +50,9 @@ void drawGameOdjects() {
     }
   }
 }
-void drawMiniMap(){
+void drawMiniMap() {
   map.resize(100, 100);
- image(map, 50,50);
+  image(map, 50, 50);
 }
 
 
